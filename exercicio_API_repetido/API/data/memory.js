@@ -1,5 +1,4 @@
 let users = [];
 let tasks = [];
 
-
-module.exports = { users, tasks }
+module.exports = { users, tasks };
