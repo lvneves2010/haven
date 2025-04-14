@@ -32,11 +32,11 @@ const addUser = router.post('/addUser', (req, res) => {
             })
         }
 
-        if( !name || typeof name !== 'string' ) {
-            res.status(400).send('invalid value for name');
+        if( !name || typeof name !== 'string' || name.trim() == '' ) {
+            return res.status(400).send('invalid value for name');
         };
         if( !age|| isNaN(age) ) {
-            res.status(400).send('invalid value for age');
+            return res.status(400).send('invalid value for age');
         }
         const newUser = {
             id: newId,
